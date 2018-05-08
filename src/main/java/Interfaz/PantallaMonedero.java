@@ -54,11 +54,11 @@ public class PantallaMonedero extends JFrame {
 		UIManager.setLookAndFeel(new com.jtattoo.plaf.mcwin.McWinLookAndFeel());
 		lblDireccion = new TextField("New label");
 		lblDireccion.setEditable(false);
-		lblDireccion.setBounds(153, 22, 174, 19);
+		lblDireccion.setBounds(153, 22, 239, 19);
 		contentPane.add(lblDireccion);
 
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(60, 53, 388, 195);
+		scrollPane.setBounds(50, 91, 388, 195);
 		contentPane.add(scrollPane);
 
 		table = new JTable();
