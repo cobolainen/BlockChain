@@ -9,12 +9,17 @@ import java.security.NoSuchProviderException;
 import java.security.PublicKey;
 import java.security.spec.InvalidKeySpecException;
 import java.security.spec.X509EncodedKeySpec;
+import java.util.Date;
 
 public class OutputTransaccion implements Serializable{
 	public String id;
 	public PublicKey receptor; //nuevo dueño de las monedas, o de los datos que se quieran enviar.
 	public float valor; //cantidad de monedas que posee
 	public String idTransaccionPadre; //id de la transaccion en la que este output ha sido creado
+	public long timestamp;
+	public long getTimestamp() {
+		return timestamp;
+	}
 	
 	//Constructor
 	public OutputTransaccion(PublicKey receptor, float valor, String transaccionPadre) {
@@ -22,6 +27,7 @@ public class OutputTransaccion implements Serializable{
 		this.valor = valor;
 		this.idTransaccionPadre = transaccionPadre;
 		this.id = StringUtil.aplicarSha256(StringUtil.getStringDeclave(receptor)+Float.toString(valor)+transaccionPadre);
+		timestamp = new Date().getTime();
 	}
 	
 	//Comprueba si la moneda o los datos te pertenecen

@@ -4,13 +4,19 @@ import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class InputTransaccion implements Serializable{
 	public String idOutput; //id del output
 	public OutputTransaccion UTXO; //contiene la salida de una trnsaccion no utilizada
+	public long timestamp;
+	public long getTimestamp() {
+		return timestamp;
+	}
 	
 	public InputTransaccion(String idOutput) {
 		this.idOutput = idOutput;
+		timestamp = new Date().getTime();
 	}
 	private void writeObject(ObjectOutputStream stream)
             throws IOException {

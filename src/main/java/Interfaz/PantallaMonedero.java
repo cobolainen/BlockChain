@@ -35,7 +35,7 @@ public class PantallaMonedero extends JFrame {
 		inicializar();
 		this.monedero = mon;
 		lblDireccion.setText(StringUtil.getStringDeclave(mon.clavePublica));
-
+		monedero.getBalance();
 	}
 
 	private void inicializar() throws UnsupportedLookAndFeelException {
