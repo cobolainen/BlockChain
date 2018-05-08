@@ -2,6 +2,7 @@ package Interfaz;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
+import java.awt.TextField;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -17,12 +18,13 @@ import javax.swing.UnsupportedLookAndFeelException;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.JScrollBar;
 import javax.swing.JScrollPane;
+import javax.swing.JButton;
 
 public class PantallaMonedero extends JFrame {
 	Monedero monedero;
 
 	private JPanel contentPane;
-	private JLabel lblDireccion;
+	private TextField lblDireccion;
 	private JTable table;
 
 	/**
@@ -40,7 +42,7 @@ public class PantallaMonedero extends JFrame {
 
 	private void inicializar() throws UnsupportedLookAndFeelException {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 508, 409);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -50,12 +52,13 @@ public class PantallaMonedero extends JFrame {
 		lbllDireccion.setBounds(50, 21, 93, 21);
 		contentPane.add(lbllDireccion);
 		UIManager.setLookAndFeel(new com.jtattoo.plaf.mcwin.McWinLookAndFeel());
-		lblDireccion = new JLabel("New label");
-		lblDireccion.setBounds(177, 22, 202, 19);
+		lblDireccion = new TextField("New label");
+		lblDireccion.setEditable(false);
+		lblDireccion.setBounds(153, 22, 174, 19);
 		contentPane.add(lblDireccion);
 
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(50, 69, 323, 152);
+		scrollPane.setBounds(60, 53, 388, 195);
 		contentPane.add(scrollPane);
 
 		table = new JTable();
